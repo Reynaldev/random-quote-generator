@@ -11,6 +11,7 @@ class App extends React.Component {
     };
 
     this.loadQuote = this.loadQuote.bind(this);
+    this.loadQuote();
   }
   loadQuote() {
     fetch("https://api.quotable.io/random")
@@ -28,28 +29,19 @@ class App extends React.Component {
   }
   render() {
     return (
-      <div id='quote-box' onLoad={this.loadQuote}>
+      <div id='quote-box'>
         <h2 id='text'>"{this.state.quote}</h2>
+        
         <p id='author'>-{this.state.author}</p>
+
         <button id='new-quote' onClick={this.loadQuote}>New quote</button>
-        <a id='tweet-quote' href="#index" target='_blank'></a>
+
+        <a id='tweet-quote' href="https://twitter.com/intent/tweet" target='_blank'>
+          <i class="fa-brands fa-x-twitter"></i>
+        </a>
       </div>
     );
   }
 }
 
 export default App;
-
-// function loadQuote() {
-//   fetch("https://api.quotable.io/random")
-//     .then((response) => {
-//       return response.json();
-//     })
-//     .then((data) => {
-//       console.log(data);
-//       App.setState({
-//         quote: data.content,
-//         author: data.author
-//       })
-//     })
-// }
