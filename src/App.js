@@ -32,9 +32,9 @@ class App extends React.Component {
   render() {
     return (
       <div id='quote-box' class="container">
-        <h3 id='text'>"{this.state.quote}</h3>
+        <h2 id='text'>"{this.state.quote}</h2>
         
-        <p id='author'>-{this.state.author}</p>
+        <h5 id='author'>-{this.state.author}</h5>
 
         <div class="row">
           <div class="col">
